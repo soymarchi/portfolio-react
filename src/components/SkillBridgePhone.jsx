@@ -54,6 +54,7 @@ export default function SkillBridgePhone({ illustrationSrc = ILLUSTRATION_SRC })
   const [time, setTime] = useState("22:06")
   const [progress, setProgress] = useState(0)
   const [analysisDone, setAnalysisDone] = useState(false)
+  const [matchProgress, setMatchProgress] = useState(0)
 
   useEffect(() => {
     const tick = () => {
@@ -83,6 +84,26 @@ export default function SkillBridgePhone({ illustrationSrc = ILLUSTRATION_SRC })
     }, 380)
     return () => clearInterval(id)
   }, [screen])
+  useEffect(() => {
+  if (screen !== 5) return
+
+  setMatchProgress(0)
+
+  let current = 0
+
+  const intervalId = setInterval(() => {
+    current += 4
+
+    if (current >= 70) {
+      current = 70
+      clearInterval(intervalId)
+    }
+
+    setMatchProgress(current)
+  }, 35)
+
+  return () => clearInterval(intervalId)
+}, [screen])
 
   const goTo = (n) => setScreen(n)
 
@@ -93,7 +114,7 @@ export default function SkillBridgePhone({ illustrationSrc = ILLUSTRATION_SRC })
   )
 
   const circumference = 2 * Math.PI * 42
-  const matchPct = 70
+  const matchPct = matchProgress
   const ringOffset = circumference - (matchPct / 100) * circumference
 
   return (
@@ -164,7 +185,7 @@ export default function SkillBridgePhone({ illustrationSrc = ILLUSTRATION_SRC })
               <p className="sb-card-sub">Upload your file in seconds.</p>
             </div>
             <div className="sb-divider">
-              <span>OR</span>
+              <span>AND</span>
             </div>
             <div className="sb-paste-card">
               <p className="sb-card-title">Paste Job Description</p>
@@ -239,10 +260,16 @@ export default function SkillBridgePhone({ illustrationSrc = ILLUSTRATION_SRC })
                 </defs>
               </svg>
               <div className="sb-ring-center">
-                <span className="sb-ring-num">70</span>
-                <span className="sb-ring-label">Match</span>
+                <span className="sb-ring-num">{matchProgress}%</span>
+                <span className="sb-ring-label">of 100%</span>
               </div>
             </div>
+            <p className="sb-match-text">
+  You are <strong>{matchProgress}%</strong> matched to this role.
+  <br />
+  There is still <strong>{100 - matchProgress}%</strong> to complete
+  to become a stronger fit.
+</p>
             <div className="sb-missing">
               <h3 className="sb-missing-h">Missing Skills:</h3>
               <ul className="sb-missing-list">

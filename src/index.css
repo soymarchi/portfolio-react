@@ -1235,3 +1235,18 @@ footer a {
     flex-direction: column;
   }
 }
+
+.sb-match-text {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 18px;
+  max-width: 260px;
+  text-align: center;
+}
+
+.sb-match-text strong {
+  color: #7c3aed;
+  font-weight: 900;
+}
