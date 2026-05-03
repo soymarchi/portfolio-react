@@ -1,6 +1,9 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
+import Hero from "./components/Hero"
+import Journey from "./components/Journey"
+import WorkSection from "./components/WorkSection"
 
 function App() {
   const [lights, setLights] = useState([])
@@ -49,84 +52,9 @@ function App() {
         />
       ))}
 
-      <section className="hero">
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          <p className="eyebrow">MARIA UTKINA / UX UI DESIGNER</p>
+    <Hero />
 
-          <motion.h1
-            initial={{ opacity: 0, filter: "blur(10px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 1.8, ease: "easeOut" }}
-          >
-            I turn
-            <br />
-            complexity
-            <br />
-            into clarity.
-          </motion.h1>
-
-          <motion.p
-            className="hero-text"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 1.1 }}
-          >
-            I design digital experiences by looking deeply into complex situations,
-            finding hidden light, and turning confusion into clear direction.
-          </motion.p>
-
-          <motion.a
-            href="#journey"
-            className="scroll-link"
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-          >
-            Enter the journey
-          </motion.a>
-        </motion.div>
-      </section>
-
-      <section id="journey" className="journey-section">
-        <div className="journey-line"></div>
-
-        <motion.div
-          className="journey-step step-one"
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          <span>01</span>
-          <h2>Some paths feel impossible to navigate.</h2>
-        </motion.div>
-
-        <motion.div
-          className="journey-step step-two"
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          <span>02</span>
-          <h2>I search for light inside complex systems.</h2>
-        </motion.div>
-
-        <motion.div
-          className="journey-step step-three"
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          <span>03</span>
-          <h2>Then I turn that light into structure.</h2>
-        </motion.div>
-      </section>
+    <Journey />
 
       <section className="burn-section">
         <motion.div
@@ -149,45 +77,7 @@ function App() {
         </motion.div>
       </section>
 
-      <section className="work-section">
-        <p className="eyebrow">SELECTED WORK</p>
-
-        <motion.div
-          className="work-card"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          viewport={{ once: true }}
-        >
-          <div className="project-copy">
-            <span>01 / CASE STUDY</span>
-            <h2>SkillBridge</h2>
-            <p>
-              A mobile app concept that helps students and professionals find missing
-              skills, understand job requirements, and move closer to their next opportunity.
-            </p>
-            <button onClick={() => setIsCaseOpen(true)}>View Case Study</button>
-          </div>
-
-          <motion.div
-            className="phone-mockup"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <div className="phone-screen">
-              <div className="phone-scroll-content">
-                <h3>SkillBridge</h3>
-                <p>Find your skill gaps. Get hired faster.</p>
-                <div className="mock-circle"></div>
-                <div className="mock-card"></div>
-                <div className="mock-card short"></div>
-                <div className="mock-card"></div>
-                <div className="mock-button">Get Started</div>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-      </section>
+      <WorkSection setIsCaseOpen={setIsCaseOpen} />
 
       <section className="cv-section">
         <motion.div
