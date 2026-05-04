@@ -4,7 +4,6 @@ import Hero from "./components/Hero"
 import Journey from "./components/Journey"
 import WorkSection from "./components/WorkSection"
 
-
 function App() {
   const [lights, setLights] = useState([])
   const lastPosition = useRef({ x: 0, y: 0 })
@@ -19,7 +18,7 @@ function App() {
       document.documentElement.style.setProperty("--y", `${e.clientY}px`)
 
       const interactive = e.target.closest(
-        "button, a, input, .work-card, .case-modal, .resume-button"
+        "button, a, input, .work-card, .case-modal, .cv-modal, .resume-button"
       )
 
       setHideLight(!!interactive)
@@ -104,13 +103,16 @@ function App() {
 
           <h2>A quick look at my design background.</h2>
 
-
           <p>
-           I’m a junior UX/UI designer with a visual and technical mindset,
-          focused on turning complex ideas into clear and intuitive experiences.</p>
+            I’m a junior UX/UI designer with a visual and technical mindset,
+            focused on turning complex ideas into clear and intuitive experiences.
+          </p>
+
           <button
-          className="resume-button"
-          onClick={() => setIsCvOpen(true)}>View Resume <span>→</span>
+            className="resume-button"
+            onClick={() => setIsCvOpen(true)}
+          >
+            View Resume <span>→</span>
           </button>
         </motion.div>
       </section>
@@ -134,15 +136,11 @@ function App() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.55, ease: "easeOut" }}
           >
-            <button
-              className="close-btn"
-              onClick={() => setIsCaseOpen(false)}
-            >
+            <button className="close-btn" onClick={() => setIsCaseOpen(false)}>
               ×
             </button>
 
             <p className="eyebrow">CASE STUDY / SKILLBRIDGE</p>
-
             <h2>Helping job seekers understand what skills they need next.</h2>
 
             <p className="case-intro">
@@ -205,52 +203,126 @@ function App() {
       {isCvOpen && (
         <div className="case-overlay">
           <motion.div
-            className="case-modal cv-modal"
+            className="cv-modal"
             initial={{ opacity: 0, y: 60, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.55, ease: "easeOut" }}
           >
-            <button
-              className="close-btn"
-              onClick={() => setIsCvOpen(false)}
-            >
+            <button className="close-btn" onClick={() => setIsCvOpen(false)}>
               ×
             </button>
 
-            <p className="eyebrow">RESUME / EXPERIENCE</p>
-
+            <p className="eyebrow">RESUME / PROFILE</p>
             <h2>Maria Utkina</h2>
 
             <p className="case-intro">
-              Junior UX/UI Designer focused on creating clear, user-centered
-              digital experiences. Skilled in Figma, wireframing, prototyping,
-              Webflow and basic front-end development.
+              UX/UI Designer focused on creating clear and user-centered digital experiences.
+              Skilled in Figma and user-centered design processes.
+              Familiar with Webflow and basic front-end (HTML, CSS, JS).
+              Fast learner with strong attention to detail and a collaborative mindset.
             </p>
 
             <div className="case-grid">
               <div>
-                <h3>Design</h3>
+                <h3>Contact</h3>
                 <p>
-                  Figma, Wireframing, User Flows, Prototyping, Responsive Design
+                  Kfar Saba<br /><br />
+                  mariutkka@gmail.com<br /><br />
+                  055-8865261
                 </p>
               </div>
 
               <div>
-                <h3>Front-End Basics</h3>
-                <p>HTML, CSS, JavaScript, React, Vite, Webflow</p>
-              </div>
-
-              <div>
-                <h3>Experience</h3>
-                <p>Altshuler Shaham, Meitav, HaMeshak Boutique</p>
-              </div>
-
-              <div>
-                <h3>Looking For</h3>
+                <h3>Education</h3>
                 <p>
-                  Junior UX/UI roles, internships, and creative product/design
-                  teams.
+                  UI Design Studies at Netcraft Academy<br /><br />
+                  Google UX Design Certificate<br /><br />
+                  Front-End Development Studies at Appleseeds
                 </p>
+              </div>
+
+              <div>
+                <h3>Skills</h3>
+                <p>
+                  Figma<br />
+                  Wireframing<br />
+                  User Flows<br />
+                  User Research<br />
+                  Prototyping
+                </p>
+              </div>
+
+              <div>
+                <h3>Basic Knowledge</h3>
+                <p>
+                  HTML<br />
+                  CSS<br />
+                  JavaScript<br />
+                  Photoshop<br />
+                  Illustrator
+                </p>
+              </div>
+
+              <div>
+                <h3>Languages</h3>
+                <p>
+                  Hebrew — Fluent<br /><br />
+                  Russian — Fluent<br /><br />
+                  English — Proficient
+                </p>
+              </div>
+
+              <div>
+                <h3>Currently Exploring</h3>
+                <p>
+                  React & Interactive Interfaces<br /><br />
+                  Motion Design<br /><br />
+                  Creative Front-End Experiences
+                </p>
+              </div>
+
+              <div className="experience-row">
+                <div className="experience-card">
+                  <div className="experience-text">
+                    <h3>Work Experience</h3>
+
+                    <p>
+                      <strong>HaMeshak Food Boutique, Hod HaSharon</strong><br />
+                      Sales Associate | 2024–2025<br /><br />
+                      Delivered customer service with empathy and clear communication.<br />
+                      Managed payments and inventory.<br />
+                      Adapted quickly to changing priorities and fast-paced settings.
+
+                      <br /><br /><br />
+
+                      <strong>Altshuler Shaham</strong><br />
+                      Back Office | 2023–2024<br /><br />
+                      Maintained sensitive documents and data security.<br />
+                      Organized tasks in a dynamic, multitasking environment.<br />
+                      Maintained accuracy and attention to detail under pressure.
+
+                      <br /><br /><br />
+
+                      <strong>Assistant to Head of Control Department</strong><br />
+                      Meitav | 2021–2023<br /><br />
+                      Managed data and processes with CRM systems.<br />
+                      Coordinated candidate placements and information.<br />
+                      Conducted quality control and process improvements.
+                    </p>
+                  </div>
+
+                  <div className="experience-lights">
+                    <span className="star star-one"></span>
+                    <span className="star star-two"></span>
+                    <span className="star star-three"></span>
+                    <span className="star star-four"></span>
+                    <span className="star star-five"></span>
+
+                    <span className="flow flow-one"></span>
+                    <span className="flow flow-two"></span>
+                    <span className="flow flow-three"></span>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
