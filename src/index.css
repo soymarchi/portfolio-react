@@ -1214,11 +1214,8 @@ footer a {
 }
 
 .case-phone-preview {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 42px;
-} 
-
+  display: none;
+}
 
 /* MOBILE */
 
@@ -1230,31 +1227,262 @@ footer a {
 }
 
 @media (max-width: 900px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .hero,
   .journey-section,
   .burn-section,
   .work-section,
   .cv-section {
-    padding: 28px;
+    padding: 24px 18px;
+  }
+
+  .hero {
+    min-height: 88vh;
+    justify-content: flex-end;
+    padding-bottom: 72px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    margin-bottom: 18px;
   }
 
   h1 {
+    font-size: clamp(52px, 19vw, 82px);
+    line-height: 0.9;
     letter-spacing: -3px;
   }
 
+  .hero-text {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-top: 24px;
+    max-width: 100%;
+  }
+
+  .scroll-indicator {
+    margin-top: 34px;
+  }
+
+  .journey-section {
+    min-height: auto;
+    padding-top: 48px;
+  }
+
   .journey-line {
-    left: 28px;
+    display: none;
   }
 
   .journey-step,
   .step-one,
   .step-two,
   .step-three {
-    margin-left: 32px;
-    margin-right: 0;
+    margin: 0 0 18px;
+    padding: 24px;
+    border-radius: 24px;
+    max-width: 100%;
+  }
+
+  .journey-step h2 {
+    font-size: 34px;
+    letter-spacing: -1.5px;
+  }
+
+  .burn-section {
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .burn-reveal {
+    padding: 28px;
+    border-radius: 28px;
+  }
+
+  .burn-reveal::before {
+    display: none;
+  }
+
+  .burn-reveal h2 {
+    font-size: 36px;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+
+  .burn-reveal p:last-child {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .cv-section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .cv-card {
+    padding: 28px;
+    border-radius: 28px;
+  }
+
+  .cv-card h2 {
+    font-size: 36px;
+    letter-spacing: -1.8px;
+  }
+
+  .cv-card p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .resume-button,
+  button {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .work-section {
+    min-height: auto;
+    padding-top: 36px;
   }
 
   .work-card {
     grid-template-columns: 1fr;
-}
+    gap: 28px;
+    padding: 28px;
+    border-radius: 30px;
+    text-align: left;
+  }
+
+  .project-copy h2 {
+    font-size: 42px;
+    letter-spacing: -2px;
+    line-height: 0.95;
+  }
+
+  .project-copy p {
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .work-card > .phone-mockup {
+    width: min(100%, 310px);
+    height: 640px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 42px;
+  }
+
+  .case-overlay {
+    align-items: flex-start;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  .case-modal,
+  .cv-modal {
+    width: 100%;
+    max-height: none;
+    min-height: auto;
+    padding: 26px 18px 28px;
+    border-radius: 28px;
+  }
+
+  .close-btn {
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+    z-index: 20;
+  }
+
+  .case-phone-preview {
+    display: flex;
+    justify-content: center;
+    margin: 42px 0 28px;
+  }
+
+  .case-phone-preview .phone-mockup {
+    width: min(100%, 310px);
+    height: 640px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 42px;
+  }
+
+  .case-modal h2,
+  .cv-modal h2 {
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: -1.8px;
+    margin-bottom: 18px;
+  }
+
+  .case-intro {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .case-grid > div,
+  .case-result {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .case-grid h3,
+  .case-result h3 {
+    font-size: 18px;
+  }
+
+  .case-grid p,
+  .case-result p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .experience-card {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 22px !important;
+    border-radius: 24px;
+  }
+
+  .experience-text {
+    max-width: 100%;
+  }
+
+  .experience-text p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .experience-lights {
+    display: none;
+  }
+
+  footer {
+    padding: 34px 18px;
+    flex-direction: column;
+    gap: 18px;
+    font-size: 14px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
