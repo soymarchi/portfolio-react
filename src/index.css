@@ -1820,3 +1820,25 @@ footer a {
     display: none;
   }
 }
+
+/* Desktop: phone appears only in main project card, not inside case study */
+@media (min-width: 901px) {
+  .case-phone-preview {
+    display: none;
+  }
+
+  .work-card > .phone-mockup {
+    display: block;
+  }
+}
+
+/* Mobile: phone appears only inside case study */
+@media (max-width: 900px) {
+  .work-card > .phone-mockup {
+    display: none;
+  }
+
+  .case-phone-preview {
+    display: flex;
+  }
+}
