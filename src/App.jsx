@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import Hero from "./components/Hero"
 import Journey from "./components/Journey"
 import WorkSection from "./components/WorkSection"
+import SkillBridgePhone from "./components/SkillBridgePhone"
 
 function App() {
   const [lights, setLights] = useState([])
@@ -139,6 +140,11 @@ function App() {
             <button className="close-btn" onClick={() => setIsCaseOpen(false)}>
               ×
             </button>
+            <div className="case-phone-preview">
+            <div className="phone-mockup">
+            <SkillBridgePhone />
+            </div>
+            </div>
 
             <p className="eyebrow">CASE STUDY / SKILLBRIDGE</p>
             <h2>Helping job seekers understand what skills they need next.</h2>

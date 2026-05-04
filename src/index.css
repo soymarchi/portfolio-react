@@ -1213,50 +1213,48 @@ footer a {
   }
 }
 
-/* MOBILE */
+.case-phone-preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 42px;
+} 
+
 
 /* MOBILE */
 
-.phone-mockup {
-  width: 100%;
-  max-width: 330px;
-  height: 680px;
-  margin: 0 auto;
-  padding: 10px;
-  border-radius: 38px;
+@media (hover: none), (pointer: coarse) {
+  .cursor-light,
+  .light-trail {
+    display: none;
+  }
 }
 
-.sb-phone {
-  border-radius: 30px;
-}
+@media (max-width: 900px) {
+  .hero,
+  .journey-section,
+  .burn-section,
+  .work-section,
+  .cv-section {
+    padding: 28px;
+  }
 
-.sb-notch {
-  width: 92px;
-  height: 20px;
-  border-bottom-left-radius: 14px;
-  border-bottom-right-radius: 14px;
-}
+  h1 {
+    letter-spacing: -3px;
+  }
 
-.sb-screen {
-  padding: 16px 18px 18px;
-}
+  .journey-line {
+    left: 28px;
+  }
 
-.sb-logo {
-  font-size: 18px;
-  margin: 14px 0;
-}
+  .journey-step,
+  .step-one,
+  .step-two,
+  .step-three {
+    margin-left: 32px;
+    margin-right: 0;
+  }
 
-.sb-title,
-.sb-welcome {
-  font-size: 24px;
+  .work-card {
+    grid-template-columns: 1fr;
 }
-
-.sb-bubble {
-  width: 190px;
-  height: 190px;
-}
-
-.sb-btn {
-  padding: 13px;
-  font-size: 13px;
 }
