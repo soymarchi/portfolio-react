@@ -125,7 +125,6 @@ export default function SkillBridgePhone({ illustrationSrc = ILLUSTRATION_SRC })
         <div className="sb-status-icons">
           <SignalIcon />
           <WifiIcon />
-          <span className="sb-battery-pct">87%</span>
           <BatteryIcon />
         </div>
       </div>
