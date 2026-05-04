@@ -149,39 +149,56 @@ function App() {
             <button className="close-btn" onClick={() => setIsCaseOpen(false)}>×</button>
 
             <p className="eyebrow">CASE STUDY / SKILLBRIDGE</p>
-            <h2>Helping job seekers understand what is missing.</h2>
 
-            <div className="case-grid">
-              <div>
-                <h3>Problem</h3>
-                <p>
-                  Students and junior professionals often feel lost when applying for jobs.
-                  They do not always know which skills they are missing.
-                </p>
-              </div>
+<h2>Helping job seekers understand what skills they need next.</h2>
 
-              <div>
-                <h3>Goal</h3>
-                <p>
-                  Create a simple mobile experience that turns confusion into a clear learning direction.
-                </p>
-              </div>
+<p className="case-intro">
+  SkillBridge is a mobile app concept designed to help students and junior professionals
+  compare their current skills with real job requirements, identify gaps, and follow a clear
+  learning path toward their career goals.
+</p>
 
-              <div>
-                <h3>Process</h3>
-                <p>
-                  Research, user flow, wireframes, visual design, prototype and high fidelity screens.
-                </p>
-              </div>
+<div className="case-grid">
+  <div>
+    <h3>Problem</h3>
+    <p>
+      Many junior job seekers feel overwhelmed when reading job descriptions.
+      They often know where they want to go, but not which skills are missing or how to improve.
+    </p>
+  </div>
 
-              <div>
-                <h3>Solution</h3>
-                <p>
-                  Users upload a CV or paste a job description, get a match score,
-                  see missing skills and follow a learning plan.
-                </p>
-              </div>
-            </div>
+  <div>
+    <h3>Goal</h3>
+    <p>
+      Create a simple experience that turns uncertainty into a clear next step:
+      what the user already has, what is missing, and what to learn next.
+    </p>
+  </div>
+
+  <div>
+    <h3>UX Direction</h3>
+    <p>
+      The flow focuses on reducing cognitive load: upload a CV, paste a job description,
+      receive a match score, and view the missing skills in a visual, easy-to-understand way.
+    </p>
+  </div>
+
+  <div>
+    <h3>Solution</h3>
+    <p>
+      SkillBridge gives users a personalized match percentage, highlights missing skills,
+      and turns them into a guided learning plan instead of leaving users confused.
+    </p>
+  </div>
+</div>
+
+<div className="case-result">
+  <h3>Final Outcome</h3>
+  <p>
+    The final concept transforms the job search from a stressful guessing process into
+    a structured path that helps users understand where they are and what to do next.
+  </p>
+</div>
 
             <div className="case-result">
               <h3>Final outcome</h3>

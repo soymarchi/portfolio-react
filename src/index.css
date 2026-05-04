@@ -40,7 +40,7 @@ main {
 
   pointer-events: none;
 
-  z-index: 30;
+  z-index: 999;
 
   transform: translate(-50%, -50%);
 
@@ -55,7 +55,8 @@ main {
 
   filter: blur(7px);
 
-  mix-blend-mode: screen;
+  mix-blend-mode: difference;
+  opacity: 0.75;
 }
 
 /* COMET TRAIL */
@@ -144,7 +145,7 @@ h1 {
 
 .hero-text {
   margin-top: 36px;
-
+  margin-bottom: 22px;
   max-width: 680px;
 
   font-size: 22px;
@@ -155,30 +156,49 @@ h1 {
 }
 
 .scroll-link {
-  margin-top: 42px;
+  margin-top: 0;
 
   width: fit-content;
 
-  color: #050505;
+  color: #1a1208;
 
-  background: #ffc76f;
+  background:
+    linear-gradient(
+      135deg,
+      #f8efe0,
+      #ffc76f
+    );
 
   text-decoration: none;
 
-  padding: 16px 26px;
+  padding: 17px 32px;
 
   border-radius: 999px;
 
-  font-weight: 700;
+  font-weight: 800;
 
-  transition: 0.25s ease;
+  letter-spacing: 0.3px;
+
+  border: 1px solid rgba(255, 230, 170, 0.45);
+
+  box-shadow:
+    0 0 28px rgba(255, 199, 111, 0.18),
+    0 14px 40px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
 .scroll-link:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+
+  filter: brightness(1.05);
 
   box-shadow:
-    0 0 40px rgba(255, 199, 111, 0.35);
+    0 0 44px rgba(255, 199, 111, 0.32),
+    0 18px 50px rgba(0, 0, 0, 0.45);
 }
 
 /* JOURNEY */
@@ -956,131 +976,103 @@ footer a {
 
 /* CASE STUDY */
 
+
+/* CASE STUDY */
+
 .case-overlay {
   position: fixed;
-
   inset: 0;
-
-  z-index: 100;
-
-  background:
-    rgba(5, 5, 5, 0.72);
-
+  z-index: 1000;
+  background: rgba(17, 12, 28, 0.72);
   backdrop-filter: blur(18px);
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   padding: 28px;
-
   animation: overlayFade 0.35s ease;
 }
 
 .case-modal {
-  width: min(1100px, 100%);
-
+  width: min(1120px, 100%);
   max-height: 88vh;
-
   overflow-y: auto;
-
   border-radius: 42px;
-
   padding: 54px;
-
   background:
-    radial-gradient(
-      circle at var(--x) var(--y),
-      rgba(255, 199, 111, 0.18),
-      transparent 38%
-    ),
-    #111;
-
-  border:
-    1px solid rgba(255, 199, 111, 0.28);
-
-  box-shadow:
-    0 0 120px rgba(255, 199, 111, 0.2);
-
-  animation: modalRise 0.55s ease;
-
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.16), transparent 36%),
+    linear-gradient(180deg, #ffffff 0%, #faf5ff 100%);
+  color: #111827;
+  border: 1px solid #ede9fe;
+  box-shadow: 0 40px 120px rgba(76, 29, 149, 0.28);
   position: relative;
 }
 
 .close-btn {
   position: absolute;
-
   top: 22px;
   right: 22px;
-
   width: 44px;
   height: 44px;
-
   border-radius: 50%;
-
   font-size: 28px;
-
   padding: 0;
+  background: #f5f3ff;
+  color: #7c3aed;
+}
 
-  background:
-    rgba(255, 255, 255, 0.08);
+.case-modal .eyebrow {
+  color: #7c3aed;
 }
 
 .case-modal h2 {
-  font-size: clamp(42px, 7vw, 90px);
-
-  line-height: 0.9;
-
-  letter-spacing: -4px;
-
+  font-size: clamp(38px, 6vw, 76px);
+  line-height: 0.95;
+  letter-spacing: -3px;
   max-width: 900px;
+  margin-bottom: 22px;
+  color: #111827;
+}
 
-  margin-bottom: 44px;
+.case-intro {
+  max-width: 720px;
+  font-size: 19px;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 42px;
 }
 
 .case-grid {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 22px;
 }
 
 .case-grid div,
 .case-result {
   padding: 28px;
-
   border-radius: 26px;
-
-  background:
-    rgba(255, 255, 255, 0.055);
-
-  border:
-    1px solid rgba(255, 199, 111, 0.16);
+  background: #ffffff;
+  border: 1px solid #ede9fe;
+  box-shadow: 0 18px 45px rgba(124, 58, 237, 0.08);
 }
 
 .case-grid h3,
 .case-result h3 {
-  color: #ffc76f;
-
+  color: #7c3aed;
   margin-bottom: 14px;
-
-  font-size: 22px;
+  font-size: 21px;
 }
 
 .case-grid p,
 .case-result p {
-  color:
-    rgba(248, 239, 224, 0.72);
-
+  color: #4b5563;
   line-height: 1.7;
-
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .case-result {
   margin-top: 22px;
+  background: linear-gradient(135deg, #f5f3ff, #ffffff);
 }
 
 @keyframes overlayFade {
@@ -1249,4 +1241,71 @@ footer a {
 .sb-match-text strong {
   color: #7c3aed;
   font-weight: 900;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-light,
+  .light-trail {
+    display: none;
+  }
+}
+
+.scroll-indicator {
+  margin-top: 52px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  text-decoration: none;
+
+  width: fit-content;
+}
+
+.scroll-indicator span {
+  color: rgba(248, 239, 224, 0.58);
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 72px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 210, 140, 0.55),
+      transparent
+    );
+
+  position: relative;
+
+  margin-left: 2px;
+}
+
+.scroll-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #ffc76f;
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  box-shadow:
+    0 0 22px rgba(255, 199, 111, 0.55);
 }

@@ -29,17 +29,26 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 1.1 }}
         >
-          I design digital experiences by looking deeply into complex situations,
-          finding hidden light, and turning confusion into clear direction.
+          I design digital experiences by looking deeply into complex
+          situations, finding hidden light, and turning confusion into clear
+          direction.
         </motion.p>
 
         <motion.a
           href="#journey"
-          className="scroll-link"
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          className="scroll-indicator"
+          animate={{ y: [0, 10, 0] }}
+          transition={{
+            duration: 2.2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         >
-          Enter the journey
+          <span>Scroll to explore</span>
+
+          <div className="scroll-line">
+            <div className="scroll-dot"></div>
+          </div>
         </motion.a>
       </motion.div>
     </section>
