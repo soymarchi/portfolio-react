@@ -1806,3 +1806,17 @@ footer a {
     height: 170px;
   }
 }
+
+/* Desktop only: show phone in main project card */
+@media (min-width: 901px) {
+  .work-card > .phone-mockup {
+    display: block;
+  }
+}
+
+/* Mobile only: hide phone in main project card */
+@media (max-width: 900px) {
+  .work-card > .phone-mockup {
+    display: none;
+  }
+}
